@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-4 m-auto border login-form">
                 <h1 class="h2 text-center my-4">Login</h1>
-                <form action="" method="post">
+                <form action="dashboard" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username"name="un"
