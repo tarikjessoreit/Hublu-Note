@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-primary text-white"  data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">HubluNote</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,7 +45,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
