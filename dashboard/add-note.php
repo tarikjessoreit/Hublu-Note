@@ -1,15 +1,50 @@
 <?php include "header.php" ?>
+<?php
+if (isset($_POST['adnotebtn'])) {
+    $note_title = $_POST["notetitle"];
+    $note_description = $_POST["notedesc"];
+    $note_createby_userID = 1;
+    $note_share_with_user = '';
+    $note_create_datetime = date("Y-m-d H:i:s");
+    $note_status = $_POST["notestatus"];
+
+    $sql = "INSERT INTO notes(note_title, note_description, note_createby_userID, note_share_with_user, note_create_datetime, note_status) VALUES ('$note_title', '$note_description', '$note_createby_userID', '$note_share_with_user', '$note_create_datetime', '$note_status')";
+
+    if ($conn->query($sql) == true) {
+        $succ = 'New Note Added! <a href="index.php">Go to All Notes</a>';
+    } else {
+        $err = "Faild to add note.Please try again." . $conn->error;
+    }
+
+}
+
+?>
+
 <section class="container mt-2">
     <div class="row">
         <div class="col-12">
             <h1>Add a Note</h1>
+
+            <?php if (isset($succ)) { ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $succ ?>
+                </div>
+            <?php } ?>
+
+            <?php if (isset($err)) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $err ?>
+                </div>
+            <?php } ?>
+
         </div>
 
         <div class="card col-8 border-0 mt-3">
             <form action="" method="post">
                 <div class="mb-3">
                     <label for="notetitle" class="form-label">Note Title <b class="text-danger">*</b> </label>
-                    <input name="notetitle" type="text" class="form-control" id="notetitle" placeholder="Enter Note Title Here..." required>
+                    <input name="notetitle" type="text" class="form-control" id="notetitle"
+                        placeholder="Enter Note Title Here..." required>
                 </div>
 
                 <div class="mb-3">
@@ -28,7 +63,7 @@
                 </div>
 
                 <div class="mb-3">
-                   <input type="submit" name="adnotebtn" value="Add Note" class="btn btn-success">
+                    <input type="submit" name="adnotebtn" value="Add Note" class="btn btn-success">
                 </div>
             </form>
         </div>
