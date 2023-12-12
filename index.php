@@ -1,4 +1,40 @@
 <?php require_once('config.php') ?>
+<?php 
+    // check if already login
+    if(isset($_SESSION['loginStatus']) && $_SESSION['loginStatus'] === true && !empty($_SESSION['userID'])){
+        header('location:dashboard/');
+    }
+
+    // submit for login 
+    if(isset($_POST['loginbtn'])){
+        $uname = $_POST['un'];
+        $upass = $_POST['pass'];
+
+        $sql = "SELECT * FROM users WHERE user_email = '$uname'";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            // Verify the entered password against the stored hash
+            if (password_verify($upass, $user['user_password'])) {
+                // Password is correct
+                $_SESSION['loginStatus'] = true;
+                $_SESSION['userID'] = $user['ID'];
+                $_SESSION['username'] = $user['user_fullname'];
+                $succ = "Login Successful!";
+                header("refresh:1;url=dashboard/");
+            } else {
+                // Password is incorrect
+                $err = "Wrong Password!";
+            }
+        } else {
+            // No user found with the entered email
+            $err = "Wrong Username!";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +52,19 @@
         <div class="row">
             <div class="col-4 m-auto border login-form">
                 <h1 class="h2 text-center my-4">Login</h1>
-                <form action="dashboard" method="post">
+                
+                <?php if(isset($succ)){ ?>
+                <div class="alert alert-success" role="alert"><?php echo $succ?></div>
+                <?php } ?>
+                
+                <?php if(isset($err)){ ?>
+                <div class="alert alert-danger" role="alert"><?php echo $err?></div>
+                <?php } ?>
+                <form action="" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username"name="un"
-                            placeholder="Enter username">
+                            placeholder="Enter Email Address">
                     </div>
 
                     <div class="mb-3">

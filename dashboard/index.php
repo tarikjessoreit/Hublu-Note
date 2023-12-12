@@ -39,9 +39,11 @@
 </section>
 
 
+
 <section class="container allnotes mt-2">
     <div class="row">
         <h1>All Notes</h1>
+
         <div class="card border-0 mt-3">
             <table id="allNotesData" class="display" style="width:100%">
                 <thead>

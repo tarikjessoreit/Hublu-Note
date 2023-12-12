@@ -41,7 +41,8 @@
 
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../assets/images/user-circle-icon.png" alt="" width="30"> Mr. Jon
+                        <img src="../assets/images/user-circle-icon.png" alt="" width="30"> 
+                        <?php echo (!empty($_SESSION['username'])) ? $_SESSION['username'] : 'user'?>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Profile</a></li>

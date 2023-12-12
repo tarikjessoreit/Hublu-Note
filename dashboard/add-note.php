@@ -3,7 +3,7 @@
 if (isset($_POST['adnotebtn'])) {
     $note_title = $_POST["notetitle"];
     $note_description = $_POST["notedesc"];
-    $note_createby_userID = 1;
+    $note_createby_userID = $_SESSION['userID'];
     $note_share_with_user = '';
     $note_create_datetime = date("Y-m-d H:i:s");
     $note_status = $_POST["notestatus"];
