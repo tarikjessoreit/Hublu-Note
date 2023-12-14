@@ -10,7 +10,7 @@
         $uname = $_POST['un'];
         $upass = $_POST['pass'];
 
-        $sql = "SELECT * FROM users WHERE user_email = '$uname'";
+        $sql = "SELECT * FROM $users WHERE user_email = '$uname'";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {

@@ -13,13 +13,12 @@
         die("Connection Failed: ".$conn->connect_error);
     }
 
-    // $sql = "drop database janatai";
-    // if($conn->query($sql) == true){
-    //     echo "Success!";
-    // }else{
-    //     echo "Error: ".$con->error;
-
-    // }
+    // Database tables
+    // define('USERS','users');
+    // define('NOTES','notes');
+    $users = "users";
+    $notes = "h_notes";
     
+    include "functions.php";
 
 ?>

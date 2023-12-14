@@ -60,7 +60,8 @@
                 <tbody>
 
                     <?php
-                    $sql = "SELECT * FROM notes";
+                    $uid = $_SESSION['userID'];
+                    $sql = "SELECT * FROM $notes WHERE note_createby_userID =  $uid";
                     $res = $conn->query($sql);
                     while ($row = $res->fetch_assoc()) {
                         ?>
@@ -85,11 +86,11 @@
                                 <?php echo $row['note_status'] ?>
                             </td>
                             <td>
-                                <a href="edit-note.php" class="btn btn-sm btn-success"><i
+                                <a href="edit-note.php?nid=<?php echo $row['ID'] ?>" class="btn btn-sm btn-success"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="delete-note.php" class="btn btn-sm btn-danger"><i
+                                <a href="delete-note.php?nid=<?php echo $row['ID']?>" class="btn btn-sm btn-danger"><i
                                         class="fa-solid fa-trash"></i></a>
-                                <a href="share-note.php" class="btn btn-sm btn-primary"><i
+                                <a href="share-note.php?nid=<?php echo $row['ID']?>" class="btn btn-sm btn-primary"><i
                                         class="fa-solid fa-share-from-square"></i></a>
                             </td>
                         </tr>

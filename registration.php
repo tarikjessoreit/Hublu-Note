@@ -11,7 +11,7 @@ if (isset($_POST['regbtn'])) {
     if ($u_pass === $u_confpass) {
         $u_pass = password_hash($u_pass, PASSWORD_DEFAULT);
         // $succ = "Login Success";
-        $sql ="INSERT INTO users(user_fullname, user_email, user_password, user_join_datetime, user_status) VALUES ('$fname','$u_email','$u_pass','$u_joining_date','$u_status')";
+        $sql ="INSERT INTO $users(user_fullname, user_email, user_password, user_join_datetime, user_status) VALUES ('$fname','$u_email','$u_pass','$u_joining_date','$u_status')";
 
         if($conn->query($sql) == true){
             $succ = "Registration Successfull!";

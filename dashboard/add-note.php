@@ -8,14 +8,13 @@ if (isset($_POST['adnotebtn'])) {
     $note_create_datetime = date("Y-m-d H:i:s");
     $note_status = $_POST["notestatus"];
 
-    $sql = "INSERT INTO notes(note_title, note_description, note_createby_userID, note_share_with_user, note_create_datetime, note_status) VALUES ('$note_title', '$note_description', '$note_createby_userID', '$note_share_with_user', '$note_create_datetime', '$note_status')";
+    $sql = "INSERT INTO $notes(note_title, note_description, note_createby_userID, note_share_with_user, note_create_datetime, note_status) VALUES ('$note_title', '$note_description', '$note_createby_userID', '$note_share_with_user', '$note_create_datetime', '$note_status')";
 
     if ($conn->query($sql) == true) {
         $succ = 'New Note Added! <a href="index.php">Go to All Notes</a>';
     } else {
         $err = "Faild to add note.Please try again." . $conn->error;
     }
-
 }
 
 ?>
