@@ -1,4 +1,10 @@
 <?php require_once('../config.php') ?>
+<?php 
+// check if already login
+if(!isset($_SESSION['loginStatus']) && $_SESSION['loginStatus'] != true && empty($_SESSION['userID'])){
+    header('location:../');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
