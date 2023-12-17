@@ -18,6 +18,8 @@
     // define('NOTES','notes');
     $users = "users";
     $notes = "h_notes";
+
+    $USERID = isset($_SESSION['userID']) ? $_SESSION['userID'] : false;
     
     include "functions.php";
 

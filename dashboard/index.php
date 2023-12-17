@@ -7,7 +7,7 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body text-center bg-primary text-white">
                     <h5 class="card-title">My Notes</h5>
-                    <div class="h1">22</div>
+                    <div class="h1"><?php echo countTotalMyNotes($USERID);?></div>
                 </div>
             </div><!--end card-->
         </div>
@@ -18,7 +18,7 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body text-center bg-danger text-white">
                     <h5 class="card-title">Share with Me</h5>
-                    <div class="h1">22</div>
+                    <div class="h1"><?php echo countTotalShareNotes($USERID);?></div>
                 </div>
             </div><!--end card-->
         </div>
@@ -28,8 +28,8 @@
             <!--card-->
             <div class="card" style="width: 18rem;">
                 <div class="card-body text-center bg-warning text-white">
-                    <h5 class="card-title">Others</h5>
-                    <div class="h1">00</div>
+                    <h5 class="card-title">Draft</h5>
+                    <div class="h1"><?php echo countTotalMyDraftNotes($USERID);?></div>
                 </div>
             </div><!--end card-->
         </div>
@@ -80,7 +80,7 @@
                                 <?php echo $row['note_create_datetime'] ?>
                             </td>
                             <td>
-                                <?php echo $row['note_createby_userID'] ?>
+                                <input type="text" value="<?php echo getUserData('user_email',$row['note_createby_userID']) ?>">
                             </td>
                             <td>
                                 <?php echo $row['note_status'] ?>

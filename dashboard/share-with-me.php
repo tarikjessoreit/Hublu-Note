@@ -1,9 +1,9 @@
-<?php include "header.php";?>
+<?php include "header.php"; ?>
 
-    <section class="container allnotes mt-2">
-        <div class="row">
-            <h1>Share With Me</h1>
-            <div class="card border-0 mt-3">
+<section class="container allnotes mt-2">
+    <div class="row">
+        <h1>Share With Me</h1>
+        <div class="card border-0 mt-3">
             <table id="allNotesData" class="display" style="width:100%">
                 <thead>
                     <tr>
@@ -34,13 +34,15 @@
                                 <?php echo $row['note_title'] ?>
                             </td>
                             <td>
-                                <?php echo substr($row['note_description'],0,20) ?>.....
+                                <?php echo substr($row['note_description'], 0, 20) ?>.....
                             </td>
                             <td>
                                 <?php echo $row['note_create_datetime'] ?>
                             </td>
                             <td>
-                                <?php echo $row['note_createby_userID'] ?>
+                                <input type="text"
+                                    value="<?php echo getUserData('user_email', $row['note_createby_userID']) ?>">
+
                             </td>
                             <td>
                                 <?php echo $row['note_status'] ?>
@@ -48,7 +50,7 @@
                             <td>
                                 <a href="edit-note.php?nid=<?php echo $row['ID'] ?>" class="btn btn-sm btn-success"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
-                                
+
                             </td>
                         </tr>
 
@@ -70,7 +72,7 @@
             </table>
         </div>
 
-        </div>
-    </section>
+    </div>
+</section>
 
-    <?php include "footer.php";?>
+<?php include "footer.php"; ?>
