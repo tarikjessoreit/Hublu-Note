@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2023 at 04:47 AM
+-- Generation Time: Dec 17, 2023 at 05:36 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notes`
+-- Table structure for table `h_notes`
 --
 
-CREATE TABLE `notes` (
+CREATE TABLE `h_notes` (
   `ID` int(11) NOT NULL,
   `note_title` text NOT NULL,
   `note_description` longtext NOT NULL,
@@ -57,9 +57,9 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `notes`
+-- Indexes for table `h_notes`
 --
-ALTER TABLE `notes`
+ALTER TABLE `h_notes`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -74,9 +74,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `notes`
+-- AUTO_INCREMENT for table `h_notes`
 --
-ALTER TABLE `notes`
+ALTER TABLE `h_notes`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
