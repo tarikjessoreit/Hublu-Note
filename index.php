@@ -32,7 +32,6 @@
             $err = "Wrong Username!";
         }
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +49,7 @@
 <body>
     <section class="container login">
         <div class="row">
-            <div class="col-4 m-auto border login-form">
+            <div class=" col-10 col-md-4 m-auto border login-form">
                 <h1 class="h2 text-center my-4">Login</h1>
                 
                 <?php if(isset($succ)){ ?>

@@ -45,7 +45,7 @@ if (isset($_POST['regbtn'])) {
 <body>
     <section class="container registration">
         <div class="row">
-            <div class="col-4 m-auto border reg-form">
+            <div class=" col-10 col-md-4 m-auto border reg-form">
                 <h1 class="h2 text-center my-4">Registration</h1>
 
                 <?php if(isset($succ)){ ?>
