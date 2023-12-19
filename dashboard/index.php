@@ -2,9 +2,9 @@
 
 <section class="container datacards mt-2">
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-md-4">
             <!--card-->
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <div class="card-body text-center bg-primary text-white">
                     <h5 class="card-title">My Notes</h5>
                     <div class="h1"><?php echo countTotalMyNotes($USERID);?></div>
@@ -13,9 +13,9 @@
         </div>
 
 
-        <div class="col">
+        <div class="col-12 col-md-4">
             <!--card-->
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <div class="card-body text-center bg-danger text-white">
                     <h5 class="card-title">Share with Me</h5>
                     <div class="h1"><?php echo countTotalShareNotes($USERID);?></div>
@@ -24,9 +24,9 @@
         </div>
 
 
-        <div class="col">
+        <div class="col-12 col-md-4">
             <!--card-->
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <div class="card-body text-center bg-warning text-white">
                     <h5 class="card-title">Draft</h5>
                     <div class="h1"><?php echo countTotalMyDraftNotes($USERID);?></div>
